@@ -13,6 +13,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="{{  route('comics.index') }}">List of Comics</a>
+                <a class="nav-item nav-link active" href="{{  route('comics.create') }}">Create new comic</a>
               </div>
             </div>
           </nav>
