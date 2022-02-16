@@ -12173,3 +12173,7 @@ fieldset:disabled .btn {
   }
 }
 
+img {
+  max-width: 600px;
+}
+
