@@ -43,7 +43,7 @@
             <input type="text" class="form-control" id="type" placeholder="Type..." name="type">
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Add Comic</button>
     </form>
 </div>
 @endsection
