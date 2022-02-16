@@ -2,7 +2,7 @@
 
 @section('main_content')
 <div class="container">
-    <h1>Add New Comic</h1>
+    <h1 class="text-center">Add New Comic</h1>
     <form action="{{ route('comics.store') }}" method="post">
         @csrf
         @method('POST')
@@ -14,8 +14,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" placeholder="Description..." name="description">
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" id="" cols="30" rows="10" placeholder="Add description..."></textarea>
         </div>
 
         <div class="mb-3">
