@@ -12177,3 +12177,7 @@ img {
   max-width: 600px;
 }
 
+form img {
+  width: 200px;
+}
+

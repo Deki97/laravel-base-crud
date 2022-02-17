@@ -9,7 +9,8 @@
           <div>Price: {{ $comic->price }} </div>
           <div>Series: {{ $comic->series }} </div>
           <div>On Sale: {{ $comic->sale_date }} </div>
-          <p class="card-text">{{ $comic->description }} </p>
+          <p class="card-text">{{!! $comic->description !!}} </p>
+          <a class="btn btn-primary" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">Modify</a>
         </div>
       </div>
 @endsection
