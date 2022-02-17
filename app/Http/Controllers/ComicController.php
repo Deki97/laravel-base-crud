@@ -115,7 +115,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic_to_delete = Comic::findOrFail($id);
+        $comic_to_delete->delete();
+
+        return redirect()->route('comics.index');
     }
 
     // Creo un metodo per la validazione, cosi evito di dover ripetere stesso codice in view diverse
