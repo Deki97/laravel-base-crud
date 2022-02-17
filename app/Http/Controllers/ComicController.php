@@ -43,15 +43,7 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
-        $request->validate([
-            'title' => 'required|max:60',
-            'description' => 'required|min:10|max:65000',
-            'thumb' => 'required|max:500',
-            'price' => 'required|max:8',
-            'series' => 'required|max:50',
-            'sale_date' => 'required|max:10',
-            'type' => 'required|max:30'
-        ]);
+        $request->validate($this->getValidationRules());
 
         $new_comic = new Comic();
         $new_comic->title = $form_data['title'];
@@ -107,6 +99,8 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
+        $request->validate($this->getValidationRules());
+
         $comic_to_modify = Comic::findOrFail($id);
         $comic_to_modify->update($form_data);
 
@@ -122,5 +116,18 @@ class ComicController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    // Creo un metodo per la validazione, cosi evito di dover ripetere stesso codice in view diverse
+    protected function getValidationRules() {
+        return [
+            'title' => 'required|max:60',
+            'description' => 'required|min:10|max:65000',
+            'thumb' => 'required|max:500',
+            'price' => 'required|max:8',
+            'series' => 'required|max:50',
+            'sale_date' => 'required|max:10',
+            'type' => 'required|max:30'
+        ];
     }
 }
