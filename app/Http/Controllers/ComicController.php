@@ -43,6 +43,16 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
+        $request->validate([
+            'title' => 'required|max:60',
+            'description' => 'required|min:10|max:65000',
+            'thumb' => 'required|max:500',
+            'price' => 'required|max:8',
+            'series' => 'required|max:50',
+            'sale_date' => 'required|max:10',
+            'type' => 'required|max:30'
+        ]);
+
         $new_comic = new Comic();
         $new_comic->title = $form_data['title'];
         $new_comic->description = $form_data['description'];
